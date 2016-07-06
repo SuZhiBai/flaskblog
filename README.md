@@ -11,7 +11,7 @@
 * git clone https://github.com/SuZhiBai/flaskblog.git
 * cd flaskblog
 * pip install -r requirements/dev.txt
-*
+
 运行
 ---------------------------------------------------
 * python manage.py db init
