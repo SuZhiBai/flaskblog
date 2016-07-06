@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "bootstrap/pagination.html" import render_pagination %}
+{% set active_page = "index" %}
+
+{% block body_content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-6">
+                    {% for post in posts %}
+                    <div style="background: #F8F8F8">
+                        <h2 class="blog-post-title">{{ post.title }}</h2>
+                         <p class="blog-post-meta">{{ post.create_time}} <a href="/">{{ post.use_id }}</a>
+                            浏览({{ post.view_count }}) <a href="/blog/{{ post._id }}">查看全文</a>
+                        </p>
+                        <p>{{ post.fragment|safe }}</p>
+                     </div>
+                    {% endfor %}
+                    {% if pagination %}
+                    {{ render_pagination(pagination)}}
+                    {% endif %}
+                </div>
+                <div class="col-md-3">
+                    <div style="background: #F8F8F8">
+                    <br/>
+                    <h4>关于我</h4>
+                     <hr/>
+                     <p>80后IT男一枚,热爱开源，暂寄于帝都。</p>
+                     <p> 青春渐渐远去，对技术的追求却越发执着，</p>
+                     <p> 也许更多的动力来源于初为人父的责任，</p>
+                     <p> 然回想起来，这些年唯一可触摸的是，</p>
+                      <p>我献出青春，换回养家糊口的报酬，仅此而已。
+                     </p>
+                     </div>
+                     <div style="background: #F8F8F8">
+                      <br/>
+                    <h4>友情链接</h4>
+                     <hr/>
+                    <ol class="list-unstyled">
+                        <li><a href="https://github.com/">GitHub</a></li>
+                    </ol>
+                </div>
+                </div>
+           </div>
+      </div>
+{% endblock %}
