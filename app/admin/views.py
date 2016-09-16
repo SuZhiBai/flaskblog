@@ -7,13 +7,13 @@ from ..models import User,Category,Post
 from forms import UserForm,CategoryForm,PostForm
 from datetime import datetime
 
-
+'''
 @admin.route('/console')
 @login_required
 def console():
     category_list = Category.query.all()
     return render_template('admin.html',category_list = category_list)
-
+'''
 
 #用户管理的增，删，改查
 @admin.route('/listuser',methods=['GET','POST'])
