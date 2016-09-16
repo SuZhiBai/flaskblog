@@ -4,45 +4,43 @@
     <link href="{{ url_for('static', filename='css/cvs.css') }}" rel="stylesheet">
 {% endblock %}
 {% block body_content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-                <ul id="main-nav" class="nav nav-tabs nav-stacked" style="">
-                    <li>
-                        <a href="{{ url_for('admin.listuser')}}" >
-                            <i class="glyphicon glyphicon-cog"></i>
-                            用户管理
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url_for('admin.editpost')}}">
-                            <i class="glyphicon glyphicon-credit-card"></i>
-                            管理文章
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ url_for('admin.writepost')}}">
-                            <i class="glyphicon glyphicon-globe"></i>
-                            发表文章
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ url_for('admin.listcategory')}}">
-                            <i class="glyphicon glyphicon-calendar"></i>
-                            栏目管理
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-fire"></i>
-                            关于系统
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            {% block page_content %}{% endblock %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <ul id="main-nav" class="nav nav-tabs nav-stacked" style="">
+                <li >
+                    <a href="{{ url_for('admin.listuser')}}" >
+                        <i class="glyphicon glyphicon-cog"></i>
+                        用户管理
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('admin.editpost')}}">
+                        <i class="glyphicon glyphicon-credit-card"></i>
+                        管理文章
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('admin.writepost')}}">
+                        <i class="glyphicon glyphicon-globe"></i>
+                        发表文章
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('admin.listcategory')}}">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                        栏目管理
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-fire"></i>
+                        关于系统
+                    </a>
+                </li>
+            </ul>
         </div>
+        {% block page_content %}{% endblock %}
     </div>
+</div>
 {% endblock %}

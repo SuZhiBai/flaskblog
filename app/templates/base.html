@@ -20,9 +20,6 @@
 {% block navbar %}
 <div class="navbar navbar-inverse" role="navigation">
     <div class="container">
-         <div class="row">
-           <div class="col-md-2"></div>
-            <div class="col-md-10">
         <div class="navbar-header">
             <a class="navbar-brand" href="{{ url_for('main.index') }}">首页</a>
         </div>
@@ -32,32 +29,27 @@
                 <li><a href="{{ url_for('main.index') }}">{{ category.name }}</a></li>
                 {% endfor %}
                 {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('admin.console') }}">后台管理</a></li>
+                <li><a href="{{ url_for('admin.listuser') }}">后台管理</a></li>
                 {% endif %}
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                    <ul class="navbar navbar-nav navbar-brand" style="list-style-type:none" >
-                        {%  if current_user.is_authenticated %}
-                            <li><a href="{{url_for("auth.logout")}}">退出</a></li>
-                        {% else %}
-                            <li><a href="{{url_for("auth.login")}}">登录</a></li>
-                        {% endif %}
-                    </ul>
+            <ul class="navbar navbar-nav navbar-brand navbar-right" style="list-style-type:none" >
+                {%  if current_user.is_authenticated %}
+                    <li><a href="{{url_for("auth.logout")}}">退出</a></li>
+                {% else %}
+                    <li><a href="{{url_for("auth.login")}}">登录</a></li>
+                {% endif %}
             </ul>
-        </div>
-                </div>
-             </div>
-        </div>
+         </div>
     </div>
 </div>
 {% endblock %}
 
 <div  id="wapper">
 {% block content %}
-    <div id="main-content">
+
         {% block body_content %}
         {% endblock %}
-     </div>
+
     <div id="footer">
     {% block footer %}
     <footer class="blog-footer">
